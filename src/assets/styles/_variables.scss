@@ -1,0 +1,32 @@
+@import "./util/palette";
+
+.main-color-font {
+  color: $Fonte-Principal;
+}
+.secondary-color-font {
+  color: $Fonte-Principal;
+}
+
+.btn-green {
+  background-color: $button-Verde;
+}
+
+.btn-green {
+  background-color: $button-Verde;
+}
+
+.btn-info {
+  background-color: $info-colour !important;
+}
+.btn-exclusion {
+  background-color: $delete-colour !important;
+}
+.btn-edition {
+  background-color: $edit-colour !important;
+}
+.btn-confirm {
+  background-color: $confirm-colour !important;
+}
+.btn-soft-deletion {
+  background-color: $soft-delete-colour !important;
+}

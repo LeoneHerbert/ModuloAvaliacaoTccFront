@@ -1,0 +1,91 @@
+.login-wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  margin: 0 !important;
+}
+
+.login-wrapper .left-container {
+  background: rgba(4, 14, 92, 0.9);
+  height: 100%;
+  border-right: 4px solid $details-1;
+}
+
+.login-wrapper .right-container {
+  background: rgba(white, 0.9);
+  height: 100%;
+  margin: 0 !important;
+}
+
+.login-content {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-content > form {
+  max-width: 315px;
+  margin-bottom: 10px;
+}
+
+.login-content > form label {
+  display: inline-block;
+
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #050938 !important;
+  text-transform: uppercase;
+
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+
+.login-content > form input {
+  background: rgba(255, 255, 255, 0.5) !important;
+
+  border: 1px solid #ccc !important;
+  border-radius: 6px !important;
+  padding: 0 10px !important;
+  margin-bottom: 10px !important;
+
+  transition: none !important;
+}
+
+.login-content > form input:focus {
+  box-shadow: none !important;
+}
+
+.login-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 315px;
+}
+
+.login-actions > div {
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 7px;
+}
+
+.login-actions > div a {
+  margin: 0;
+}
+
+.login-actions > div a:first-child {
+  margin-right: 2px;
+}
+
+#login {
+  width: 42.5%;
+  background: #3085d6;
+}
+
+#login:hover {
+  background: #237acc;
+}

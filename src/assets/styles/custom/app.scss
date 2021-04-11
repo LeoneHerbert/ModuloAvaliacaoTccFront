@@ -1,0 +1,43 @@
+.link-colour {
+  color: $link-colour;
+}
+
+@media only screen and (max-width: 768px) {
+  .page-title {
+    margin: 0 auto;
+    padding: 3rem;
+    text-align: center;
+  }
+
+  .center-mx-on-med-and-down {
+    margin: 0 auto;
+    div {
+      margin: 0 auto;
+    }
+  }
+
+  .full-width-on-med-and-down {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .titular-line,
+  .section-title {
+    text-align: center;
+  }
+
+  .titular-line {
+    h5::after {
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+    }
+  }
+
+  .section-title {
+    &::after {
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+    }
+  }
+}

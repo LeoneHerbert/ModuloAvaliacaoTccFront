@@ -1,0 +1,125 @@
+.product-search {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.172549) 0 6px 12px 0;
+  cursor: pointer;
+}
+.search-element::-v-deep .vs__selected-options {
+  padding: 0px !important;
+}
+
+.for-nav-filter .vs__selected-options {
+  padding: 0px !important;
+}
+
+.for-nav-filter .vs__dropdown-menu {
+  overflow-x: hidden;
+  li {
+    padding-left: 7px;
+    margin-left: 0;
+    height: 50%;
+  }
+}
+
+.search-element {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+  border-right: 1px solid rgba(10, 10, 10, 0.1);
+  padding: 1em;
+
+  .row {
+    margin-bottom: 0px;
+    margin-top: 5px;
+
+    .input-field {
+      margin-top: 0px;
+      margin-bottom: 0px;
+
+      .select-wrapper > input {
+        color: #333 !important;
+      }
+    }
+  }
+  &.set-width {
+    max-width: 220px;
+  }
+}
+
+.search-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.result-count > span {
+  color: #57b846;
+}
+
+.search-input {
+  border: none;
+  appearance: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  margin-top: 5px;
+}
+
+.search-input::placeholder {
+  color: #333;
+}
+
+.search-input:focus {
+  box-shadow: 0px 2px 0px 0px tomato;
+}
+
+.search-button {
+  display: inline-block;
+  flex-grow: 1;
+  height: 80px;
+  line-height: 80px;
+  padding: 0 2em;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 100;
+  border: 0;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: white;
+  background-color: tomato;
+  transition: background-color 0.8s ease;
+}
+
+.search-button:hover {
+  background-color: HSLA(345, 100%, 60%, 1);
+}
+
+.input-a {
+  &::placeholder {
+    color: rgba($color: #000000, $alpha: 0.7);
+  }
+}
+
+.select-unpadded .vs__dropdown-toggle .vs__selected-options {
+  padding: 0px !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .product-search {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 7px;
+    & > .search-element,
+    & > .search-element.set-width {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}

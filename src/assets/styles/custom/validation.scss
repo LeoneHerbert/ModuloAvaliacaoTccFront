@@ -1,0 +1,35 @@
+.form-group--error {
+  label {
+    color: $danger-color !important;
+  }
+  /* label focus color */
+  input:focus + label {
+    color: $danger-color !important;
+  }
+  /* label underline focus color */
+  input:focus {
+    border-bottom: 1px solid $danger-color-dark !important;
+    box-shadow: 0 1px 0 0 $danger-color-dark !important;
+  }
+
+  input {
+    border-bottom: 1px solid $danger-color !important;
+    box-shadow: 0 1px 0 0 $danger-color !important;
+  }
+}
+
+.form-group--error + .form-group__message,
+.form-group--error > .error {
+  color: #f57f6c !important;
+}
+.input-field > input:required::after {
+  position: relative;
+  content: "****";
+}
+
+.v-span-error {
+  color: #f44336 !important;
+  font-size: 12px;
+  position: relative;
+  top: -5px;
+}

@@ -1,0 +1,10 @@
+.fadable {
+  opacity: 1;
+  display: auto;
+  transition: 1s ease-in-out;
+}
+
+.fadable.fade {
+  display: none;
+  opacity: 0;
+}

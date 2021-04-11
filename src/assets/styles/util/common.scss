@@ -1,0 +1,122 @@
+.radius-1 {
+  border-radius: 0.75rem;
+}
+
+/*
+  Cursors
+*/
+.pointer {
+  cursor: pointer;
+}
+
+/*
+  Size helpers
+*/
+.w-90 {
+  max-width: 90%;
+}
+
+/*
+  Defaults
+*/
+.titular-line {
+  margin-bottom: 50px;
+
+  & > h4,
+  & > h5 {
+    text-transform: uppercase;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      height: 5px;
+      width: 75px;
+      border-radius: 5px;
+    }
+  }
+  .listing::after {
+    background-color: rgba($tarjas-disponiveis, 0.5);
+  }
+
+  .inserting::after {
+    background-color: rgba($details-2, 0.5);
+  }
+
+  .editing::after {
+    background-color: rgba($edit-colour, 0.5);
+  }
+}
+
+.form-component .row > .col:first-child {
+  padding-left: 0;
+  & label {
+    left: 0;
+  }
+}
+
+.selection-label {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+html {
+  font-family: "Prompt", sans-serif !important;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 640px !important;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background: white;
+}
+
+main {
+  margin-top: 3rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+label > i {
+  color: #f44336;
+  font-size: 10px;
+  margin: -2px 3px !important;
+  position: absolute;
+}
+
+blockquote {
+  border-left: 5px solid $tarjas-disponiveis;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.input-field > label {
+  color: $Fonte-label;
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    margin-top: 5px !important;
+  }
+
+  .form-admin {
+    margin-top: 20px !important;
+  }
+
+  .w-100-on-med-and-down {
+    max-width: 100%;
+  }
+}

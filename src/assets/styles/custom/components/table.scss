@@ -1,0 +1,50 @@
+$table-padding-left: 20px;
+$table-padding-left-sm: 5px;
+
+.table-class {
+  border-collapse: collapse;
+  font-size: 0.9em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  border-radius: 5px;
+  thead tr {
+    // background-color: rgba($color: #000000, $alpha: 1.0);
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    color: #333;
+
+    & > th:first-child {
+      padding-left: $table-padding-left;
+    }
+
+    & > th:last-child {
+      text-align: center;
+    }
+  }
+  tbody tr {
+    padding: 0px 15px;
+    & > td:first-child {
+      padding-left: $table-padding-left;
+    }
+    & > td.action-col {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .table-class.responsive-table {
+    thead tr > th:first-child,
+    tbody tr > td:first-child {
+      padding-left: $table-padding-left-sm;
+    }
+    thead tr > th:last-child {
+      text-align: right;
+    }
+    tbody tr > td.action-col {
+      justify-content: start;
+    }
+  }
+}

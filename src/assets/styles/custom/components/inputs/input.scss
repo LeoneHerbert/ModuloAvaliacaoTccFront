@@ -1,0 +1,31 @@
+/* Focus and underline custom color */
+
+/* label focus */
+.input-field input[type="text"]:focus + label,
+.input-field input[type="number"]:focus + label,
+.input-field input[type="email"]:focus + label,
+.input-field input[type="password"]:focus + label {
+  color: #002d50;
+}
+
+/* label underline focus */
+.input-field input[type="text"]:focus,
+.input-field input[type="number"]:focus,
+.input-field input[type="email"]:focus,
+.input-field input[type="password"]:focus {
+  border-bottom: 1px solid #002d50;
+  box-shadow: 0 1px 0 0 #002d50;
+}
+
+/* Remove arrows/spinners */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

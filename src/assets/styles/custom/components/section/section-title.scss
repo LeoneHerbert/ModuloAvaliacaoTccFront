@@ -1,0 +1,32 @@
+.section-title {
+  position: relative;
+  padding-bottom: 0.5rem;
+
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #161616;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  height: 5px;
+  width: 75px;
+  border-radius: 5px;
+}
+
+.section-title-green::after {
+  background: #00bc02;
+}
+
+.section-title-orange::after {
+  background: rgb(245, 107, 2);
+}
+
+.section-title-red::after {
+  background: rgb(254, 13, 0);
+}

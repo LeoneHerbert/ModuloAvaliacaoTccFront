@@ -1,0 +1,15 @@
+.ck-editor {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.ck-editor__main {
+  .ck-content {
+    min-height: 150px !important;
+  }
+}
+
+.ck.ck-editor__main > * {
+  strong {
+    font-weight: bold;
+  }
+}

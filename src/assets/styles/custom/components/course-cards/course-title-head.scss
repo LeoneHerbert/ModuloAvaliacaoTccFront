@@ -1,0 +1,33 @@
+.course-title-head {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  padding: 15px 7px;
+  display: inline-block;
+  border-radius: 5px;
+
+  margin-bottom: 0%;
+  cursor: pointer;
+}
+
+.course-title-head.theme-1 {
+  color: white;
+  background-color: #e57373;
+}
+.course-title-head.theme-2 {
+  color: #2196f3;
+  background-color: wheat;
+}
+.course-title-head.theme-3 {
+  color: #e65100;
+  background-color: #d5bf86;
+}
+.course-title-head.theme-4 {
+  color: #fff59d;
+  background-color: #2f6690;
+}
+.course-title-head.no-active {
+  color: white;
+  background-color: #564d4a;
+}

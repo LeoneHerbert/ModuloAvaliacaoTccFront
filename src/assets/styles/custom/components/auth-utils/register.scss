@@ -1,0 +1,23 @@
+#register {
+  width: 100%;
+  background: $details-1;
+}
+
+#register:hover {
+  background: #007c23;
+}
+
+.btn-register {
+  background: #00bc02;
+  color: #fff;
+
+  border: none;
+  border-radius: 4px;
+
+  padding: 7px 14px;
+  transition: all 0.25s;
+}
+
+.btn-register:hover {
+  background: rgb(0, 170, 3);
+}
