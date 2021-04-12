@@ -34,7 +34,7 @@ function processa(element, time, initial, end, display = "block") {
 
   let opc = initial;
 
-  let intervalo = setInterval(function() {
+  let intervalo = setInterval(function () {
     if (opc == end) {
       if (end == 0) {
         element.style.display = "none";
