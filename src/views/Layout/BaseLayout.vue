@@ -1,0 +1,122 @@
+<template>
+  <div class="content-background" :class="{ loaded: !isLoading }">
+    <div id="main">
+      <div class="wrapper">
+        <side-nav></side-nav>
+        <main class="container-main" style="min-height: 80vh">test</main>
+        <intern-footer></intern-footer>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import SideNav from "./Sidenav/Side";
+
+import InternFooter from "./Footer/Footer";
+
+export default {
+  name: "BaseLayout",
+  data: () => ({
+    drawer: false,
+    loading: false,
+  }),
+
+  mounted() {
+    this.toggleLoading();
+  },
+  components: {
+    SideNav,
+
+    InternFooter,
+  },
+  computed: {
+    isLoading() {
+      return this.loading;
+    },
+  },
+  methods: {
+    toggleLoading() {
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+      }, 300);
+    },
+  },
+  // watch: {
+  //   $route: function () {
+  //     this.toggleLoading();
+  //   },
+  // },
+};
+</script>
+
+<style scoped>
+header,
+main,
+footer {
+  padding-left: 300px;
+}
+
+main {
+  margin-top: 3rem;
+}
+
+.content-background {
+  background-color: #f3f3f3;
+}
+
+#main.max-width > .wrapper > main {
+  padding-left: 100px;
+}
+
+#main.max-width > .wrapper > main:deep .on-max-width-mx-auto {
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+.width-75 {
+  width: 75%;
+}
+
+.container-main {
+  margin: 0 auto;
+  width: 98%;
+}
+
+/*
+  ate 600: 98%
+  ate 768: 85%
+  ate 992: 90%
+  de 992 em diante: 95% 
+*/
+
+@media only screen and (min-width: 601px) {
+  .container-main {
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .container-smol {
+    padding-left: 7px;
+  }
+  .container-main {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .container-main {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  header,
+  main,
+  footer {
+    padding-left: 0;
+  }
+}
+</style>
