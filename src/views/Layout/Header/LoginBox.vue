@@ -16,8 +16,13 @@
           <form class="form-horizontal" method="post" accept-charset="UTF-8">
             <legend class="align-end text-end">Login</legend>
             <hr />
-            <MDBInput label="Usuário" type="email" name="username" />
-            <MDBInput label="Senha" type="password" />
+            <MDBInput
+              label="Usuário"
+              type="email"
+              name="username"
+              class="my-2"
+            />
+            <MDBInput label="Senha" type="password" class="my-2" />
             <div class="d-flex justify-content-between">
               <a href="#" class="text-uppercase pt-2">cadastrar</a>
               <input

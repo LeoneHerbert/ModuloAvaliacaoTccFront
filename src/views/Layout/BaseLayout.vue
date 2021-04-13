@@ -4,7 +4,9 @@
     <div id="main">
       <div class="wrapper">
         <MDBContainer>
-          <main class="container-main" style="min-height: 80vh">test</main>
+          <main class="container-main" style="min-height: 80vh">
+            <router-view />
+          </main>
         </MDBContainer>
       </div>
     </div>

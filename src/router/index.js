@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import BaseLayout from "../views/Layout/BaseLayout.vue";
+import TCCViewAll from "../views/TCC/TCCViewAll.vue";
 // import InternHome from "../views/Intern.vue";
 
 const routes = [
@@ -21,7 +22,14 @@ const routes = [
   {
     path: "/intern",
     component: BaseLayout,
-    name: "FrontInner",
+    children: [
+      {
+        // UserProfile will be rendered inside User's <router-view>
+        // when /user/:id/profile is matched
+        path: "tcc",
+        component: TCCViewAll,
+      },
+    ],
   },
 ];
 
