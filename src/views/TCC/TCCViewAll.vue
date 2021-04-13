@@ -1,11 +1,18 @@
 <template>
-  <div style="background-color: #f3f3f3; min-height: 100vh">
-    <h3>OLAR</h3>
+  <div class="content">
+    <h1 class="h1">Processos de TCC</h1>
+    <tcc-cards />
   </div>
 </template>
 
 <script>
-export default {};
+import TccCards from "./TCCCards/PagePanelTCC";
+
+export default {
+  components: {
+    TccCards,
+  },
+};
 </script>
 
 <style></style>
