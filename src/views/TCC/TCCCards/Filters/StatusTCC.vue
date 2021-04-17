@@ -18,22 +18,18 @@
 
 <script>
 import { MDBCol } from "mdb-vue-ui-kit";
+import { useModelWrapper } from "@/components/ModelWrapper/ComputedModelWrapper";
 
 export default {
+  setup(props, { emit }) {
+    return {
+      value: useModelWrapper(props, emit),
+    };
+  },
   components: {
     MDBCol,
   },
   props: ["modelValue"],
-  computed: {
-    value: {
-      get() {
-        return this.modelValue;
-      },
-      set(value) {
-        this.$emit("update:modelValue", value);
-      },
-    },
-  },
 };
 </script>
 

@@ -11,6 +11,7 @@
           id="items_limit"
           class="form-select"
           aria-label="Number of items to display"
+          @change="changeQuantity($event)"
         >
           <option selected>Quantidade</option>
           <option
@@ -45,8 +46,12 @@ export default {
   },
   methods: {
     changeCheckBox(event) {
-      const { value } = event.target;
-      this.$emit("view-more-recent", value);
+      const { checked } = event.target;
+      this.$emit("view-more-recent", checked);
+    },
+    changeQuantity(e) {
+      const { value } = e.target;
+      this.$emit("display-quantity", value);
     },
   },
 };

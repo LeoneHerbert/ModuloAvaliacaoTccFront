@@ -1,8 +1,16 @@
 <template>
   <div>
-    <tcc-filters />
+    <tcc-filters
+      v-model:status="filters.status"
+      v-model:searchQuery="filters.searchQuery"
+      v-model:moreRecent="filters.moreRecent"
+      v-model:displayOptions="filters.displayOptions"
+    />
+    <pre>
+      {{ filters.displayOptionsInput }}
+    </pre>
     <MDBRow>
-      <MDBCol sm="12" md="6" lg="3" v-for="index in 8" :key="index">
+      <MDBCol sm="12" md="6" :lg="showInLarge" v-for="index in 8" :key="index">
         <tcc-card class="my-3" />
       </MDBCol>
     </MDBRow>
@@ -34,11 +42,39 @@ export default {
   data() {
     return {
       currentPage: 1,
+      filters: {
+        status: "",
+        searchQuery: "",
+        moreRecent: "",
+        displayOptions: 8,
+      },
     };
+  },
+  computed: {
+    displayOptionsInput() {
+      return this.filters.displayOptions;
+    },
+    showInLarge() {
+      if (this.displayOptionsInput == 2) {
+        return "6";
+      }
+      if (this.displayOptionsInput % 3 === 0) {
+        return "4";
+      }
+      return "3";
+    },
   },
   methods: {
     onPageChange(page) {
       this.currentPage = page;
+    },
+  },
+  watch: {
+    filters: {
+      deep: true,
+      handler(n) {
+        console.log(n);
+      },
     },
   },
 };
