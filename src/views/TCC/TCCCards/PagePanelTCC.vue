@@ -21,7 +21,7 @@
 import PaginationMDBootstrap from "@/views/Utils/Pagination/PaginationBootstrap";
 import { MDBCol, MDBRow } from "mdb-vue-ui-kit";
 import TccCard from "./TCCCard.vue";
-import TccFilters from "./TCCFilters.vue";
+import TccFilters from "./Filters/TCCFilters.vue";
 
 export default {
   components: {
