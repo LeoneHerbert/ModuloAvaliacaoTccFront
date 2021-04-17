@@ -78,9 +78,9 @@ export default {
 }
 .login-box {
   min-width: 300px;
-  right: 0 !important;
+  right: -50px !important;
   margin-top: 0;
-  margin-right: 0;
+  margin-right: 50px;
 }
 .me-auto {
   margin-right: 5px !important;
