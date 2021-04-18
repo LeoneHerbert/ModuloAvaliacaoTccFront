@@ -46,7 +46,7 @@ export default {
         status: "",
         searchQuery: "",
         moreRecent: "",
-        displayOptions: 8,
+        displayOptions: "8",
       },
     };
   },

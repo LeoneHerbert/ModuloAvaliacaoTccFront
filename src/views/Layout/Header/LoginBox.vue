@@ -30,6 +30,7 @@
                 type="button"
                 name="submit"
                 value="Entrar"
+                @click="logIn"
               />
             </div>
           </form>
@@ -49,6 +50,7 @@ import {
   MDBDropdownMenu,
 } from "mdb-vue-ui-kit";
 import { ref } from "vue";
+import { mapActions } from "vuex";
 
 export default {
   components: {
@@ -66,6 +68,9 @@ export default {
       dropdown1,
     };
   },
+  methods: {
+    ...mapActions(["logIn"]),
+  },
 };
 </script>
 
@@ -80,9 +85,15 @@ export default {
   min-width: 300px;
   right: -50px !important;
   margin-top: 0;
-  margin-right: 50px;
+  margin-right: 100px;
 }
 .me-auto {
   margin-right: 5px !important;
+}
+
+@media screen and (max-width: 576px) {
+  .login-box {
+    margin-right: 0px;
+  }
 }
 </style>
