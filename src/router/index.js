@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import BaseLayout from "../views/Layout/BaseLayout.vue";
 import TCCViewAll from "../views/TCC/TCCViewAll.vue";
+import AvaliationForm from "../views/TCC/Avaliation/AvaliationForm";
 // import InternHome from "../views/Intern.vue";
 
 const routes = [
@@ -28,6 +29,10 @@ const routes = [
         // when /user/:id/profile is matched
         path: "tcc",
         component: TCCViewAll,
+      },
+      {
+        path: "avaliar",
+        component: AvaliationForm,
       },
     ],
   },

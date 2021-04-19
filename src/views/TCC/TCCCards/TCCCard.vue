@@ -63,17 +63,4 @@ export default {
 .small {
   font-size: 0.9rem;
 }
-
-.blue-text {
-  color: $info-color;
-}
-
-.blue-text-dark {
-  color: $info-color-dark;
-}
-
-.bold {
-  font-weight: bold;
-  color: #222;
-}
 </style>
