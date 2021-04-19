@@ -1,18 +1,23 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="home py-5">
+    <MDBRow>
+      <message-notification />
+      <techs />
+    </MDBRow>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import MessageNotification from "@/components/Cards/MessageNotification";
+import { MDBRow } from "mdb-vue-ui-kit";
+import Techs from "@/components/Cards/Techs.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    MessageNotification,
+    MDBRow,
+    Techs,
   },
 };
 </script>

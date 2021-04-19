@@ -1,25 +1,25 @@
 <template>
   <div class="p-5 bg-light bg-white z-depth-2 mt-3 student-info">
-    <div>
-      <div class="">
+    <small class="clean-blue float-end">
+      Curso:
+      <span class="blue-text-dark">
+        {{ course }}
+      </span>
+    </small>
+    <div class="">
+      <div class="base-info">
         <p class="mb-3">
-          Aluno: <b>{{ studentName }}</b>
+          Aluno: <span>{{ studentName }}</span>
         </p>
         <p class="mb-3">
-          Código: <b>{{ studentCode }}</b>
+          Código: <span>{{ studentCode }}</span>
         </p>
-        <p class="mb-3">Tema:</p>
-        <p>
-          {{ subject }}
+        <p class="mb-3">
+          Tema: <span>{{ subject }} </span>
         </p>
-        <small>Orientador: <span>Daniel da Silva</span></small>
+
+        <p>Orientador: <span>Daniel da Silva</span></p>
       </div>
-      <small class="clean-blue float-end">
-        Curso:
-        <span class="blue-text-dark">
-          {{ course }}
-        </span>
-      </small>
     </div>
   </div>
 </template>
@@ -40,5 +40,15 @@ export default {
 <style lang="scss" scoped>
 .student-info {
   border-radius: 20px;
+}
+
+.base-info > p {
+  color: #f3b773;
+
+  & > span {
+    color: #333;
+    font-weight: bold;
+    display: block;
+  }
 }
 </style>
