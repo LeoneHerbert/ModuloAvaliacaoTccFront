@@ -1,6 +1,6 @@
 @import "./breadcrumbs.scss";
 @import "./ckeditor.scss";
-@import "./footer.scss";
+// @import "./footer.scss";
 @import "./header.scss";
 @import "./nav.scss";
 @import "./search-style.scss";
@@ -15,3 +15,6 @@
 @import "./inputs";
 @import "./mixins";
 @import "./section";
+
+// Custom modules
+@import "./students/students-styles.scss";
