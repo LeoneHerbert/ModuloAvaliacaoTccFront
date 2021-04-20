@@ -4,7 +4,7 @@
     <div id="main">
       <div class="wrapper">
         <MDBContainer>
-          <main class="container-main" style="min-height: 80vh">
+          <main class="container-main mb-5" style="min-height: 700px">
             <router-view />
           </main>
         </MDBContainer>

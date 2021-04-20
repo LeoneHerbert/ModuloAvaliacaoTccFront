@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="">
     <h5 class="section-bg">Apresentação Escrita</h5>
+
     <div class="compentences mt-2 mb-3">
       <MDBInput label="Conteúdo" v-model="content" type="number" />
       <MDBTextarea label="Comentários" rows="4" v-model="contentComment" />

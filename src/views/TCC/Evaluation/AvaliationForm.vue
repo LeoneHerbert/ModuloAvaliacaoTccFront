@@ -6,10 +6,19 @@
     <student-info />
 
     <h4 class="mt-4"><span class="blue-text">#</span> Avaliação</h4>
+    <MDBRow>
+      <MDBCol sm="12" md="6">
+        <div class="d-flex justify-content-center">
+          <writing-evaluation class="evaluation-partition" />
+        </div>
+      </MDBCol>
 
-    <writing-evaluation class="evaluation-partition" />
-
-    <oral-evaluation class="evaluation-partition" />
+      <MDBCol sm="12" md="6">
+        <div class="d-flex justify-content-center">
+          <oral-evaluation class="evaluation-partition" />
+        </div>
+      </MDBCol>
+    </MDBRow>
   </div>
 </template>
 
@@ -17,30 +26,37 @@
 import OralEvaluation from "./Student/Forrm/OralEvaluation.vue";
 import WritingEvaluation from "./Student/Forrm/WritingEvaluation.vue";
 import StudentInfo from "./Student/StudentInfo.vue";
+import { MDBRow, MDBCol } from "mdb-vue-ui-kit";
+
 export default {
   components: {
     StudentInfo,
     WritingEvaluation,
     OralEvaluation,
+    MDBRow,
+    MDBCol,
   },
 };
 </script>
 
 <style lang="scss">
-.compentences .form-outline {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  max-width: 350px;
-  margin-left: 0px;
-
-  & .form-control ~ .form-label {
-    transform: translateY(-1rem) translateY(0.1rem) scale(0.8);
-  }
-}
-
 .section-bg {
   background-color: #f3b773;
   padding: 3px;
   display: inline-block;
+}
+
+.hr-vertical {
+  border: none;
+  border-left: 1px solid hsla(200, 10%, 50%, 100);
+  height: 100vh;
+  width: 1px;
+}
+
+.evaluation-partition {
+  width: 90%;
+  .compentences {
+    margin: 0 auto;
+  }
 }
 </style>
