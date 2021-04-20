@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-blue-200">
     <!-- Container wrapper -->
     <div class="container">
       <!-- Navbar brand -->
@@ -160,4 +160,8 @@
 export default {};
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.bg-blue-200 {
+  background-color: #90caf9;
+}
+</style>

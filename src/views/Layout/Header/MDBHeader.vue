@@ -1,5 +1,5 @@
 <template>
-  <MDBNavbar expand="lg" light bg="light" container="md">
+  <MDBNavbar expand="lg" light bg="gabs" container="md">
     <MDBNavbarBrand href="#">Brand</MDBNavbarBrand>
 
     <MDBNavbarToggler
@@ -9,7 +9,7 @@
     <MDBCollapse v-model="collapse1" id="navbarSupportedContent">
       <MDBNavbarNav class="mb-2 mb-lg-0">
         <MDBNavbarItem to="#" active> Home </MDBNavbarItem>
-        <MDBNavbarItem href="#"> Link </MDBNavbarItem>
+        <MDBNavbarItem to="/tcc"> TCCs </MDBNavbarItem>
         <header-dropdown />
         <MDBNavbarItem to="#" disabled> Disabled </MDBNavbarItem>
         <template v-slot:contentRight>
@@ -62,4 +62,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.bg-gabs {
+  background-color: #90caf9;
+}
+</style>
