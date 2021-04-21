@@ -1,4 +1,5 @@
 import { createStore } from "vuex";
+import tccsModule from "./tccs/tcc-module";
 
 export default createStore({
   state: {
@@ -14,5 +15,7 @@ export default createStore({
       commit("SET_LOG_IN");
     },
   },
-  modules: {},
+  modules: {
+    tccs: tccsModule,
+  },
 });
