@@ -62,9 +62,16 @@ export default {
   },
   methods: {
     submit() {
-      const evaluations = this.evaluations.filter((el) => !!el.submitChild());
+      const evaluations = this.evaluations
+        .map((el) => el.submitChild())
+        .filter((el) => !!el);
       if (evaluations.length === this.evaluations.length) {
-        evaluations.forEach(console.log);
+        const data = evaluations.reduce(
+          (prev, current) => Object.assign(prev, current),
+          {}
+        );
+        console.log(data);
+        console.log("Enviando requisição");
         return;
       }
       this.showModal = true;
