@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h5 class="section-bg">Apresentação Escrita</h5>
+    <h5 class="section-bg">Apresentação Oral</h5>
     <div class="compentences">
       <MDBInput
         label="Capacidade de Exposição"

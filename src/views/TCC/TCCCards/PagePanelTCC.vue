@@ -6,18 +6,25 @@
       v-model:moreRecent="filters.moreRecent"
       v-model:displayOptions="filters.displayOptions"
     />
-    <pre>
-      {{ filters.displayOptionsInput }}
-    </pre>
+
     <MDBRow>
-      <MDBCol sm="12" md="6" :lg="showInLarge" v-for="index in 8" :key="index">
-        <tcc-card class="my-3" />
+      <MDBCol
+        sm="12"
+        md="6"
+        :lg="showInLarge"
+        v-for="(item, index) in tccs.splice(
+          (currentPage - 1) * perPage,
+          (currentPage - 1) * perPage + perPage
+        )"
+        :key="index"
+      >
+        <tcc-card class="my-3" :tcc="item" />
       </MDBCol>
     </MDBRow>
     <div class="d-flex my-5">
       <PaginationMDBootstrap
-        :total="30"
-        :per-page="5"
+        :total="tccs.length"
+        :per-page="perPage"
         :current-page="currentPage"
         @pagechanged="onPageChange"
       />
@@ -30,6 +37,7 @@ import PaginationMDBootstrap from "@/views/Utils/Pagination/PaginationBootstrap"
 import { MDBCol, MDBRow } from "mdb-vue-ui-kit";
 import TccCard from "./TCCCard.vue";
 import TccFilters from "./Filters/TCCFilters.vue";
+import { mapState } from "vuex";
 
 export default {
   components: {
@@ -48,6 +56,7 @@ export default {
         moreRecent: "",
         displayOptions: "8",
       },
+      perPage: 5,
     };
   },
   computed: {
@@ -63,6 +72,10 @@ export default {
       }
       return "3";
     },
+    ...mapState({
+      // arrow functions can make the code very succinct!
+      tccs: (state) => state.tccs.data,
+    }),
   },
   methods: {
     onPageChange(page) {

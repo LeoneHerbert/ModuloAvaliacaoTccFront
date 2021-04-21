@@ -100,6 +100,8 @@ export default {
         this.average = total / evaluations.length;
         console.log(data);
         console.log("Enviando requisição");
+        alert("AVALIAÇÃO REALIZADA");
+        this.$router.go(-1);
         return;
       }
       this.showModal = true;

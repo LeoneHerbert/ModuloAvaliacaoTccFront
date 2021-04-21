@@ -3,6 +3,7 @@
     <h1 class="h1 py-2">Processos de TCC</h1>
     <hr />
     <tcc-cards />
+    <pre> {{ tccs }} </pre>
   </div>
 </template>
 
