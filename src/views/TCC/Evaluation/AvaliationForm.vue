@@ -28,6 +28,7 @@
         Submeter Avaliação
       </MDBBtn>
     </div>
+    <error-modal v-model="showModal" @close="showModal = false" />
   </div>
 </template>
 
@@ -36,6 +37,7 @@ import OralEvaluation from "./Student/Forrm/OralEvaluation/OralEvaluation.vue";
 import WritingEvaluation from "./Student/Forrm/WritingEvaluation/WritingEvaluation.vue";
 import StudentInfo from "./Student/StudentInfo.vue";
 import { MDBRow, MDBCol, MDBBtn } from "mdb-vue-ui-kit";
+import ErrorModal from "@/components/Modal/ErrorModal.vue";
 
 export default {
   components: {
@@ -44,11 +46,13 @@ export default {
     OralEvaluation,
     MDBRow,
     MDBCol,
+    ErrorModal,
     MDBBtn,
   },
   data() {
     return {
       evaluations: [],
+      showModal: false,
     };
   },
   mounted() {
@@ -58,7 +62,12 @@ export default {
   },
   methods: {
     submit() {
-      this.evaluations.forEach((el) => console.log(el.v$));
+      const evaluations = this.evaluations.filter((el) => !!el.submitChild());
+      if (evaluations.length === this.evaluations.length) {
+        evaluations.forEach(console.log);
+        return;
+      }
+      this.showModal = true;
     },
   },
 };
