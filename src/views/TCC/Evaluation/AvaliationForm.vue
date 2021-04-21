@@ -3,7 +3,7 @@
     <h4 class="mt-4">
       <span class="blue-text">#</span> Informações do graduando
     </h4>
-    <student-info />
+    <student-info :student="student" />
 
     <h4 class="my-4"><span class="blue-text">#</span> Avaliação</h4>
     <MDBRow>
@@ -44,6 +44,7 @@ import WritingEvaluation from "./Student/Forrm/WritingEvaluation/WritingEvaluati
 import StudentInfo from "./Student/StudentInfo.vue";
 import { MDBRow, MDBCol, MDBBtn } from "mdb-vue-ui-kit";
 import ErrorModal from "@/components/Modal/ErrorModal.vue";
+import { getStudent } from "@/services/student";
 
 export default {
   components: {
@@ -60,7 +61,22 @@ export default {
       evaluations: [],
       average: 0,
       showModal: false,
+      student: {},
     };
+  },
+  beforeMount() {
+    getStudent(1).then(({ data }) => {
+      const { email, id, matricula, nome } = data.dados;
+      const payload = {
+        studentName: nome,
+        studentCode: matricula,
+        course: "Sistemas de informação",
+        id,
+        subject: "Análise de Software no Mercado Moderno",
+        email,
+      };
+      Object.assign(this.student, payload);
+    });
   },
   mounted() {
     const { writingEvaluation, oralEvaluation } = this.$refs;

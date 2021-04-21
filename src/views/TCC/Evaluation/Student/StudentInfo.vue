@@ -3,19 +3,19 @@
     <small class="clean-blue float-end">
       Curso:
       <span class="blue-text-dark">
-        {{ course }}
+        {{ student.course }}
       </span>
     </small>
     <div class="">
       <div class="base-info">
         <p class="mb-3">
-          Aluno: <span>{{ studentName }}</span>
+          Aluno: <span>{{ student.studentName }}</span>
         </p>
         <p class="mb-3">
-          Código: <span>{{ studentCode }}</span>
+          Código: <span>{{ student.studentCode }}</span>
         </p>
         <p class="mb-3">
-          Tema: <span>{{ subject }} </span>
+          Tema: <span>{{ student.subject }} </span>
         </p>
 
         <p>Orientador: <span>Daniel da Silva</span></p>
@@ -26,13 +26,17 @@
 
 <script>
 export default {
-  data() {
-    return {
-      studentName: "Caius Tito",
-      studentCode: "201821150SI",
-      subject: "Uso de marcadores fiduciais em cenário de museus - MA",
-      course: "Sistemas de Informação",
-    };
+  props: {
+    student: {
+      type: Object,
+      default: () => ({
+        id: 0,
+        studentName: "Caius Tito",
+        studentCode: "201821150SI",
+        subject: "Uso de marcadores fiduciais em cenário de museus - MA",
+        course: "Sistemas de Informação",
+      }),
+    },
   },
 };
 </script>
