@@ -23,6 +23,12 @@
       </MDBCol>
     </MDBRow>
 
+    <div class="d-flex justify-content-center my-3">
+      <p>
+        <b>Média do aluno: </b> <span>{{ average }} pontos</span>
+      </p>
+    </div>
+
     <div class="d-flex justify-content-center my-4">
       <MDBBtn color="primary" style="width: 100%" @click="submit">
         Submeter Avaliação
@@ -52,6 +58,7 @@ export default {
   data() {
     return {
       evaluations: [],
+      average: 0,
       showModal: false,
     };
   },
@@ -70,6 +77,11 @@ export default {
           (prev, current) => Object.assign(prev, current),
           {}
         );
+        let total = 0;
+        this.evaluations.forEach((el) => {
+          total += el.total;
+        });
+        this.average = total / evaluations.length;
         console.log(data);
         console.log("Enviando requisição");
         return;

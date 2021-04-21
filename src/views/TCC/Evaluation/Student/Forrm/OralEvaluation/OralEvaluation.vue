@@ -56,7 +56,7 @@
 <script>
 import { MDBInput, MDBTextarea } from "mdb-vue-ui-kit";
 import useVuelidate from "@vuelidate/core";
-import { reactive } from "vue";
+import { computed, reactive } from "vue";
 import { submitSubHandler } from "@/components/Behaviour/Methods/submit";
 import { data } from "./OralEvaluationData";
 import { rules } from "./OralEvoluationValidations";
@@ -68,7 +68,20 @@ export default {
     const v$ = useVuelidate(rules, state);
     const submitChild = submitSubHandler(state, v$);
 
-    return { v$, submitChild, state };
+    const total = computed(() => {
+      const {
+        expositionCapability,
+        responseCapability,
+        timePrediction,
+      } = state;
+      return (
+        parseInt(expositionCapability) +
+        parseInt(responseCapability) +
+        parseInt(timePrediction)
+      );
+    });
+
+    return { v$, submitChild, state, total };
   },
   components: {
     MDBInput,

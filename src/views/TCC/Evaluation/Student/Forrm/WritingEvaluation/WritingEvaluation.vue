@@ -41,7 +41,7 @@
 <script>
 import { MDBInput, MDBTextarea } from "mdb-vue-ui-kit";
 import useVuelidate from "@vuelidate/core";
-import { reactive } from "vue";
+import { computed, reactive } from "vue";
 import { submitSubHandler } from "@/components/Behaviour/Methods/submit";
 import { data } from "./WritingEvaluationData";
 import { rules } from "./WritingEvaluationValidations";
@@ -53,7 +53,12 @@ export default {
     const v$ = useVuelidate(rules, state);
     const submitChild = submitSubHandler(state, v$);
 
-    return { v$, submitChild, state };
+    const total = computed(() => {
+      const { content, essay, normalization } = state;
+      return parseInt(content) + parseInt(essay) + parseInt(normalization);
+    });
+
+    return { v$, submitChild, state, total };
   },
   components: {
     MDBInput,
