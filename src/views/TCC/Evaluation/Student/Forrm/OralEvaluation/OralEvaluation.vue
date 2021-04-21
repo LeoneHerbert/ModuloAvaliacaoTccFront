@@ -1,17 +1,16 @@
 <template>
   <div>
     <h5 class="section-bg">Apresentação Escrita</h5>
-
     <div class="compentences">
       <MDBInput
         label="Capacidade de Exposição"
-        v-model="expositionCapability"
+        v-model="state.expositionCapability"
         type="number"
       />
       <MDBTextarea
         label="Comentários"
         rows="4"
-        v-model="expositionCapabilityComment"
+        v-model="state.expositionCapabilityComment"
       />
 
       <small
@@ -24,13 +23,13 @@
     <div class="compentences">
       <MDBInput
         label="Respostas às arguições"
-        v-model="responseCapability"
+        v-model="state.responseCapability"
         type="number"
       />
       <MDBTextarea
         label="Comentários"
         rows="4"
-        v-model="responseCapabilityComment"
+        v-model="state.responseCapabilityComment"
       />
       <small class="text-danger" v-if="v$.responseCapability.$invalid">
         O valor das repostas às arguições deve ser uma nota de 0 a 4.
@@ -39,13 +38,13 @@
     <div class="compentences">
       <MDBInput
         label="Previsão do tempo"
-        v-model="timePrediction"
+        v-model="state.timePrediction"
         type="number"
       />
       <MDBTextarea
         label="Comentários"
         rows="4"
-        v-model="timePredictionComment"
+        v-model="state.timePredictionComment"
       />
       <small class="text-danger" v-if="v$.timePrediction.$invalid">
         A nota de previsão do tempo deve ser uma nota de 0 a 1.
@@ -57,32 +56,23 @@
 <script>
 import { MDBInput, MDBTextarea } from "mdb-vue-ui-kit";
 import useVuelidate from "@vuelidate/core";
-import { required, numeric, between } from "@vuelidate/validators";
+import { reactive } from "vue";
+import { submitSubHandler } from "@/components/Behaviour/Methods/submit";
+import { data } from "./OralEvaluationData";
+import { rules } from "./OralEvoluationValidations";
 
 export default {
   setup() {
-    return { v$: useVuelidate() };
-  },
-  data() {
-    return {
-      expositionCapability: 0,
-      responseCapability: 0,
-      timePrediction: 0,
-      expositionCapabilityComment: "",
-      responseCapabilityComment: "",
-      timePredictionComment: "",
-    };
+    const state = reactive(data);
+
+    const v$ = useVuelidate(rules, state);
+    const submitChild = submitSubHandler(state, v$);
+
+    return { v$, submitChild, state };
   },
   components: {
     MDBInput,
     MDBTextarea,
-  },
-  validations() {
-    return {
-      expositionCapability: { required, numeric, between: between(0, 5) }, // Matches this.firstName
-      responseCapability: { required, numeric, between: between(0, 4) }, // Matches this.lastName
-      timePrediction: { required, numeric, between: between(0, 1) },
-    };
   },
 };
 </script>

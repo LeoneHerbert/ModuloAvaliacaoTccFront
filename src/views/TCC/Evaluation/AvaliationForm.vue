@@ -5,28 +5,37 @@
     </h4>
     <student-info />
 
-    <h4 class="mt-4"><span class="blue-text">#</span> Avaliação</h4>
+    <h4 class="my-4"><span class="blue-text">#</span> Avaliação</h4>
     <MDBRow>
       <MDBCol sm="12" md="6">
         <div class="d-flex justify-content-center">
-          <writing-evaluation class="evaluation-partition" />
+          <writing-evaluation
+            class="evaluation-partition"
+            ref="writingEvaluation"
+          />
         </div>
       </MDBCol>
 
       <MDBCol sm="12" md="6">
         <div class="d-flex justify-content-center">
-          <oral-evaluation class="evaluation-partition" />
+          <oral-evaluation class="evaluation-partition" ref="oralEvaluation" />
         </div>
       </MDBCol>
     </MDBRow>
+
+    <div class="d-flex justify-content-center my-4">
+      <MDBBtn color="primary" style="width: 100%" @click="submit">
+        Submeter Avaliação
+      </MDBBtn>
+    </div>
   </div>
 </template>
 
 <script>
-import OralEvaluation from "./Student/Forrm/OralEvaluation.vue";
-import WritingEvaluation from "./Student/Forrm/WritingEvaluation.vue";
+import OralEvaluation from "./Student/Forrm/OralEvaluation/OralEvaluation.vue";
+import WritingEvaluation from "./Student/Forrm/WritingEvaluation/WritingEvaluation.vue";
 import StudentInfo from "./Student/StudentInfo.vue";
-import { MDBRow, MDBCol } from "mdb-vue-ui-kit";
+import { MDBRow, MDBCol, MDBBtn } from "mdb-vue-ui-kit";
 
 export default {
   components: {
@@ -35,6 +44,22 @@ export default {
     OralEvaluation,
     MDBRow,
     MDBCol,
+    MDBBtn,
+  },
+  data() {
+    return {
+      evaluations: [],
+    };
+  },
+  mounted() {
+    const { writingEvaluation, oralEvaluation } = this.$refs;
+    this.evaluations.push(writingEvaluation);
+    this.evaluations.push(oralEvaluation);
+  },
+  methods: {
+    submit() {
+      this.evaluations.forEach((el) => console.log(el.v$));
+    },
   },
 };
 </script>
